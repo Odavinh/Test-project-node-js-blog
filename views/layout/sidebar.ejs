@@ -1,0 +1,50 @@
+<div class="sidebar">
+  <div class="box auth" id="box-auth">
+    <% if(!login && !id){ %>
+    <form method="post" class="register">
+      <h2>Реєстрація</h2>
+      <div class="form-group">
+        <label for="register-login">Логін</label>
+        <input type="text" id="register-login" name="login" />
+      </div>
+      <div class="form-group">
+        <label for="register-password">Пароль</label>
+        <input type="password" id="register-password" name="password" />
+      </div>
+      <div class="form-group">
+        <label for="register-password-confirm">Повтори пароль</label>
+        <input
+          type="password"
+          id="register-password-confirm"
+          name="passwordConfirm"
+        />
+      </div>
+      <div class="buttons">
+        <button class="switch-button secondary-inverse">Вхід</button>
+        <button class="register-button">Зареєструватися</button>
+      </div>
+    </form>
+
+    <form method="post" class="login">
+      <h2>Вхід</h2>
+      <div class="form-group">
+        <label for="login-login">Логін</label>
+        <input type="text" id="login-login" name="login" />
+      </div>
+      <div class="form-group">
+        <label for="login-password">Пароль</label>
+        <input type="password" id="login-password" name="password" />
+      </div>
+      <div class="buttons">
+        <button class="switch-button secondary-inverse">Реєстрація</button>
+        <button class="login-button">Увійти</button>
+      </div>
+    </form>
+    <%}else{%>
+    <p><%= login %> <a href="/api/auth/logout">Вийти</a></p>
+    <%}%>
+  </div>
+  <div class="box">
+    box
+  </div>
+</div>
