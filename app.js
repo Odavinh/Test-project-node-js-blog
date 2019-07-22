@@ -44,11 +44,14 @@ app.get("/", (req, res) => {
   const id = req.session.userId;
   const login = req.session.userLogin;
   res.render("index.ejs", {
-    id,
-    login
+    user:{
+      id,
+      login
+    }
   });
 });
 app.use("/api/auth", routrs.auth);
+app.use("/post", routrs.post);
 
 /////error 404
 app.use((req, res, next) => {

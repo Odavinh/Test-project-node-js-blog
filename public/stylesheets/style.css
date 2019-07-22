@@ -399,7 +399,7 @@ body {
   flex-direction: column;
   height: 49px;
   border-top: 1px solid #e8e8e8;
-  background-color: rgba(253, 241, 173, 0.972);
+  background-color:#e8e8e8;
 }
 .footer .container {
   height: 100%;
@@ -507,4 +507,18 @@ div.ok,
 p.ok {
   background-color: #fff;
   border: solid 1px green;
+}
+
+.add-post{
+  margin-bottom: 15px;
+  padding: 15px;
+  width: 100%;
+  min-height: 100px;
+  border: 1px solid #e8e8e8;
+  background-color: #fff;
+}
+
+.add-post h2{
+  margin-top: 0;
+  margin-bottom: 30px;
 }
