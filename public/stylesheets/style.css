@@ -273,6 +273,8 @@ body {
   width: 120px;
   height: 46px;
   margin-top: 3px;
+  padding-top: 10px;
+  text-decoration: none;
 }
 .header .container .menu {
   display: -webkit-box;
@@ -285,6 +287,7 @@ body {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  text-decoration: none;
 }
 .header .container .menu li a {
   color: #fff;
@@ -466,7 +469,7 @@ body {
 }
 
 .auth form .buttons :hover {
-  border: solid 1px #fff;
+  border: 1px solid #f1ce08;
 }
 
 .auth .register {
@@ -509,6 +512,17 @@ p.ok {
   border: solid 1px green;
 }
 
+.title-post{
+  color: #4b4944;
+  text-decoration: none;
+}
+
+.title-post:hover{
+  color: wheat;
+}
+
+
+
 .add-post{
   margin-bottom: 15px;
   padding: 15px;
@@ -521,4 +535,83 @@ p.ok {
 .add-post h2{
   margin-top: 0;
   margin-bottom: 30px;
+}
+
+.add-post-button{
+  color: #f1ce08;
+  background-color: #4b4944;
+  font-size: 14px;
+  border: 1px solid #4b4944;
+  cursor: pointer;
+  height: 33px;
+  width: 115px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.add-post-button:hover{
+  border: 1px solid #f1ce08;
+}
+
+.publish-button{
+  float: right;
+}
+
+.exit{
+  float: right;
+  color: #4b4944;
+  border: #4b4944 solid 1px;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.exit:hover{
+  border: solid wheat 1px
+}
+
+.pagination{
+  font-size: 16px;
+}
+.pagination .old{
+  float: right;
+  color: #4b4944;
+  border: #4b4944 solid 1px;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+
+.pagination .new{
+  float: left;
+  color: #4b4944;
+  border: #4b4944 solid 1px;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.pagination .old:hover{
+  border: solid wheat 1px
+}
+
+.pagination .new:hover{
+  border: solid wheat 1px
 }

@@ -1,12 +1,11 @@
-<% include layout/header.ejs %>
+<% include ../layout/header.ejs %>
 
 <div class="main">
   <div class="container">
     <div class="content">
-      <% user.posts.forEach(post => {%>
         <div class="post">
             <div class="top">
-              <a href="/onePost/<%= post.url %>" class="title-post"><h2><%= post.title %></h2></a>
+              <h2><%= post.title %></h2>
             </div>
             <div class="body">
               <p>
@@ -21,25 +20,13 @@
               <a href="/">Комментарі</a>
             </div>
           </div>
-      <% }) %>
       <div class="pagination">
-
-        <% if(user.current > 1 && !user.current == 2) { %>
-          <a href="/archive/<%= +user.current - 1 %>" class="new">← Назад</a>
-        <% } %>
-
-        <% if(user.current == 2) { %>
           <a href="/" class="new">← На головну</a>
-        <% } %>
-          
-        <% if(user.pages > 0 && user.current < user.pages) { %>
-          <a href="/archive/<%= +user.current + 1 %>" class="old">Далі →</a>
-        <% } %>
       </div>
     </div>
 
-    <% include layout/sidebar.ejs %>
+    <% include ../layout/sidebar.ejs %>
   </div>
 </div>
 
-<% include layout/footer.ejs %>
+<% include ../layout/footer.ejs %>

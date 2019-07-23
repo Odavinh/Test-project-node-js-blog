@@ -9,12 +9,16 @@ router.get("/add",(req, res)=>{
     const id = req.session.userId;
     const login = req.session.userLogin;
 
-    res.render("post/add.ejs", {
-        user:{
-           id,
-           login 
-        }
-    });
+    if(!id || !login){
+        res.redirect("/");
+    }else{
+        res.render("post/add.ejs", {
+            user:{
+               id,
+               login 
+            }
+        });
+    }
 });
 
 router.post("/add",async (req, res)=>{
@@ -22,40 +26,45 @@ router.post("/add",async (req, res)=>{
     const body = req.body.body;
     const turnDown = new  Turndown();
 
-    if(!title || !body){
-        res.json({
-            ok: false,
-            error: "Всі поля повинні бути заповнені!",
-            fields: ["title", "body"]
-        });
-    } else if (title.lenght < 6 || title.lenght > 50) {
-        res.json({
-        ok: false,
-        error: "Довжина заголовка від 6 до 50 символів!",
-        fields: ["title"]
-        });
-    }else if(body.lenght < 20 || body.lenght > 10000){
-        res.json({
-        ok: false,
-        error: "Довжина стітті від 20 до 10000 символів!",
-        fields: ["body"]
-        });
+    if(!req.session.userId || !req.session.userLogin){
+        res.redirect("/");
     }else{
-        const post =  await models.post.create({
-            title,
-            body: turnDown.turndown(body)
-        });
-
-        if(post){
-            console.log(post);
+        if(!title || !body){
             res.json({
-                ok: true
+                ok: false,
+                error: "Всі поля повинні бути заповнені!",
+                fields: ["title", "body"]
+            });
+        } else if (title.lenght < 6 || title.lenght > 50) {
+            res.json({
+            ok: false,
+            error: "Довжина заголовка від 6 до 50 символів!",
+            fields: ["title"]
+            });
+        }else if(body.lenght < 20 || body.lenght > 10000){
+            res.json({
+            ok: false,
+            error: "Довжина стітті від 20 до 10000 символів!",
+            fields: ["body"]
             });
         }else{
-            console.error(post.errors);
-            res.json({
-                ok: false
+            const post =  await models.post.create({
+                title,
+                body: turnDown.turndown(body),
+                owner: req.session.userId
             });
+    
+            if(post){
+                console.log(post);
+                res.json({
+                    ok: true
+                });
+            }else{
+                console.error(post.errors);
+                res.json({
+                    ok: false
+                });
+            }
         }
     }
 });

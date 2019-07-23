@@ -40,18 +40,10 @@ db()
     console.log("Connection to the database did not take place");
   });
 
-app.get("/", (req, res) => {
-  const id = req.session.userId;
-  const login = req.session.userLogin;
-  res.render("index.ejs", {
-    user:{
-      id,
-      login
-    }
-  });
-});
+app.use("/", routrs.archive);
 app.use("/api/auth", routrs.auth);
 app.use("/post", routrs.post);
+app.use("/archive", routrs.archive);
 
 /////error 404
 app.use((req, res, next) => {
