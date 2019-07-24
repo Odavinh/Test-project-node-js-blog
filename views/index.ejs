@@ -16,7 +16,7 @@
             <div class="bottom">
               <div class="author">
                 Автор:
-                <a href="/"><%= post.owner %></a>
+                <a href="/user/<%= post.owner.login %>" class="title-post"><%= post.owner.login %></a>
               </div>
               <a href="/">Комментарі</a>
             </div>

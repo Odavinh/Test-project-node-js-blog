@@ -518,7 +518,7 @@ p.ok {
 }
 
 .title-post:hover{
-  color: wheat;
+  text-decoration: underline;
 }
 
 
@@ -559,6 +559,47 @@ p.ok {
   text-decoration: none;
 }
 
+.cancel{
+  float: right;
+  color: #4b4944;
+  border: #4b4944 solid 1px;
+  background-color: white;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  height: 25px;
+  margin-right: 10px;
+  font-size: 12px
+}
+
+.cancel:hover{
+  border:wheat solid 1px;
+}
+
+#publish-comment{
+  font-size: 12px;
+  float: right;
+  height: 25px;
+}
+
+#publish-comment:hover{
+  border: 1px solid #f1ce08;
+}
+
+#AreaComment{
+  margin-bottom: 10px;
+}
+
+form.comment{
+  display: flex;
+  flex-direction: column;
+  display: none;
+  max-width: 500px;
+  min-width: 200px;
+
+}
+
 .add-post-button:hover{
   border: 1px solid #f1ce08;
 }
@@ -594,6 +635,8 @@ p.ok {
   padding-right: 10px;
   border-radius: 20px;
   text-decoration: none;
+  margin: 30px;
+  margin-left: 0px;
 }
 
 
@@ -606,6 +649,8 @@ p.ok {
   padding-right: 10px;
   border-radius: 20px;
   text-decoration: none;
+  margin: 30px;
+  margin-left: 0px;
 }
 
 .pagination .old:hover{
@@ -614,4 +659,15 @@ p.ok {
 
 .pagination .new:hover{
   border: solid wheat 1px
+}
+
+
+.link{
+  color: #4b4944;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.link:hover{
+  text-decoration: underline;
 }

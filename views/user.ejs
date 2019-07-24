@@ -1,0 +1,37 @@
+<% include layout/header.ejs %>
+
+<div class="main">
+    <div class="container">
+      <div class="content">
+        <% posts.forEach(post => {%>
+          <div class="post">
+              <div class="top">
+                <a href="/onePost/<%= post.url %>" class="title-post"><h2><%= post.title %></h2></a>
+              </div>
+              <div class="body">
+                <p>
+                  <%= post.body %>
+                </p>
+              </div>
+              <div class="bottom">
+                <a href="/">Комментарі</a>
+              </div>
+            </div>
+        <% }) %>
+        <div class="pagination">
+  
+          <% if(current > 1) { %>
+            <a href="/user/<%= fullUser.login %>/<%= +current - 1 %>" class="new">← Назад</a>
+          <% } %>
+            
+          <% if(pages > 0 && current < pages) { %>
+            <a href="/user/<%= fullUser.login %>/<%= +current + 1 %>" class="old">Далі →</a>
+          <% } %>
+        </div>
+      </div>
+  
+      <% include layout/sidebar.ejs %>
+    </div>
+  </div>
+  
+  <% include layout/footer.ejs %>

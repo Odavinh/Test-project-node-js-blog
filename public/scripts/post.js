@@ -1,4 +1,3 @@
-const $  = require("jquery");
 
 
 $(function(){
@@ -9,7 +8,6 @@ $(function(){
             title: $("#post-title").val(),
             body:$("#post-body").val()
         };
-        console.log(data);
         $.ajax({
             type: "POST",
             data: JSON.stringify(data),
