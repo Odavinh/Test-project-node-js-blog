@@ -21,9 +21,10 @@
             </div>
           </div>
 
-          <div class="comments">
+          <div class="comments" id="<%= post.id %>">
             <h3>Коментарі</h3>
             <div class="comment-list">
+              <%- include('../layout/comments.ejs', {items: comments})%>
               <span class="link" id="new">Додати коментар</span>
               <form class="comment">
                 <textarea name="body" id="AreaComment"></textarea>

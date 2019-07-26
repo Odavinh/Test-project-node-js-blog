@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const autoPopulate = require("mongoose-autopopulate");
+const modelPost = require("./post");
 
 const schema = new Schema(
   {
@@ -17,12 +19,14 @@ const schema = new Schema(
     },
     owner:{
         type: Schema.Types.ObjectId,
-        ref:"user"
+        ref:"user",
+        autopopulate: true
     },
     children:[
         {
             type: Schema.Types.ObjectId,
-            ref:"comment"
+            ref:"comment",
+            autopopulate: true
         }
     ],
     createdAt:{
@@ -34,6 +38,15 @@ const schema = new Schema(
     timestemps: false
   }
 );
+
+schema.pre('save', async function(next){
+  if(this.isNew){
+    await modelPost.incCommentCount(this.post);
+  }
+  next();
+});
+
+schema.plugin(autoPopulate);
 
 schema.set("toJSON", { virtuals: true });
 

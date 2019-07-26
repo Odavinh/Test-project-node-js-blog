@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const config = require("../config");
 const models = require("../models/index");
+const moment = require("moment");
+moment.locale("uk");
 
 async function posts(req, res){
     const userId = req.session.userId;
@@ -60,8 +62,16 @@ router.get("/onePost/:post", async (req, res, next) => {
                 err.status = 404;
                 next(err);
             }else{
+                const comments = await models.comment.find({
+                    post:post.id,
+                    parent:{$exists: false}
+                });
+
+
                 res.render("post/onePost.ejs", {
                     post,
+                    comments,
+                    moment,
                     user:{
                         id: userId,
                         login: userLogin

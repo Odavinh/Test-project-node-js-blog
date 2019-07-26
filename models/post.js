@@ -15,12 +15,26 @@ const schema = new Schema(
     owner:{
       type: Schema.Types.ObjectId,
       ref: "user"
+    },
+    commentCount:{
+      type: Number,
+      default: 0
     }
   },
   {
     timestamps: true
   }
 );
+
+schema.statics = {
+  incCommentCount(postId) {
+    return this.findByIdAndUpdate(
+      postId,
+      {$inc : {commentCount: 1}},
+      {new : true, useFindAndModify: false }
+    )
+  }
+};
 
 schema.plugin(
   URLSlugs("title", {
