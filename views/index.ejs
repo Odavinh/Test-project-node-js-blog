@@ -6,7 +6,11 @@
       <% user.posts.forEach(post => {%>
         <div class="post">
             <div class="top">
-              <a href="/onePost/<%= post.url %>" class="title-post"><h2><%= post.title %></h2></a>
+              <a href="/onePost/<%= post.url %>" class="title-post"><h2><%= post.title %>
+                <% if(post.owner.login === user.login){%>
+                  <a href="/post/edit/<%= post.id %>" class="link">🖉</a>
+                <% } %>
+              </h2></a>
             </div>
             <div class="body">
               <p>

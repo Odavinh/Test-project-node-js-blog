@@ -45,6 +45,7 @@ app.use("/api/auth", routrs.auth);
 app.use("/post", routrs.post);
 app.use("/archive", routrs.archive);
 app.use("/comment", routrs.comment);
+app.use("/upload",routrs.upload)
 
 /////error 404
 app.use((req, res, next) => {

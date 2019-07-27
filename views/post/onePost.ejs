@@ -5,7 +5,11 @@
     <div class="content">
         <div class="post">
             <div class="top">
-              <h2><%= post.title %></h2>
+              <h2><%= post.title %>
+                <% if(post.owner.login === user.login){%>
+                <a href="/post/edit/<%= post.id %>" class="link">🖉</a>
+              <% } %>
+            </h2>
             </div>
             <div class="body">
               <p>
@@ -15,7 +19,7 @@
             <div class="bottom">
               <div class="author">
                 Автор:
-                <a href="/"><%= post.owner %></a>
+                <a href="/user/<%= user.login %>" class="link"><%= user.login %></a>
               </div>
               <a href="/">Комментарі</a>
             </div>

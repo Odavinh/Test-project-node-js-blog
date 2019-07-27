@@ -3,19 +3,32 @@
     <div class="container">
         <div class="content add-post">   
           <form method="post" class="post-form">
-              <h2>Добавлення поста</h2>
+              <% if(edit) {%>
+                <h2>Редагування поста</h2>
+              <% }else{ %>
+                <h2>Добавлення поста</h2>
+              <% } %>
             <div class="form-group">
               <label for="post-title">Заголоаок</label>
-              <input type="text" id="post-title" name="title" />
+              <input type="text" id="post-title" name="title" value="<%= edit ? post.title : '' %>" />
             </div>
             <div class="form-group">
               <label for="post-body">Стаття</label>
-              <textarea name="body" id="post-body" cols="30" rows="20"></textarea>
+              <textarea name="body" id="post-body" cols="30" rows="20"> <%= edit ? post.body : '' %></textarea>
             </div>
+            <input type="hidden" id="post-id" value="<%= post.id %>">
             <div class="buttons">
-              <button class="publish-button" id="publish">Опублікувати</button>
+              <% if(edit) {%>
+                <button class="edit-button">Підтвердити</button>
+              <% }else{ %>
+                <button class="publish-button" id="publish">Опеблікувати</button>
+              <% } %>
             </div>
           </form>
+          <form method="POST" enctype="multipart/form-data" id="fileinfo">
+            <input type="file" name="file" id="file" required />
+            <button class="upload-button" >Загрузити</button>
+         </form>
         </div>
   
       <% include ../layout/sidebar.ejs %>

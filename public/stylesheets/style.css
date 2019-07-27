@@ -607,6 +607,12 @@ form.comment{
 .publish-button{
   float: right;
 }
+.edit-button{
+  float: right;
+}
+.edit-button:hover{
+  border: 1px solid #f1ce08;
+}
 
 .exit{
   float: right;
@@ -681,6 +687,7 @@ form.comment{
 
 li{
   margin-top: 10px;
+  margin-right: 5px
 }
 
 .date{
@@ -703,4 +710,21 @@ li{
   font-size: 13px;
 }
 
+.upload-button{
+  width: 100px;
+}
 
+.upload-button:hover{
+  border: 1px solid #f1ce08;
+}
+
+#file{
+  float: right;
+  color: #4b4944;
+  border:#E8E8E8 solid 1px;
+  padding: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 3px;
+  text-decoration: none;
+}
