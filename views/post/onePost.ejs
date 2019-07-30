@@ -6,7 +6,7 @@
         <div class="post">
             <div class="top">
               <h2><%= post.title %>
-                <% if(post.owner.login === user.login){%>
+                <% if(post.owner == user.id){%>
                 <a href="/post/edit/<%= post.id %>" class="link">🖉</a>
               <% } %>
             </h2>

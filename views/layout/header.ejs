@@ -14,14 +14,14 @@
         <a href="/"><h1 class="logo">Blog</h1></a>
         <ul class="menu">
           <li>
-              <a class="link" href="/user/<%= user.login %>"><%= user.login %></a>
+            <a class="link" href="/user/<%= user.login %>"><%= user.login %></a>
           </li>
           <li>
-              <% if(user.login && user.id){ %>
-                <a href="/api/auth/logout" class="exit">Вийти</a>
-              <% }else{ %>
-                <a href="/api/auth/logout" class="exit">Вхід</a>
-              <% } %>
+            <% if(user.login && user.id){ %>
+            <a href="/api/auth/logout" class="exit">Вийти</a>
+            <% }else{ %>
+            <a href="/api/auth/logout" class="exit">Вхід</a>
+            <% } %>
           </li>
         </ul>
       </div>

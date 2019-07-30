@@ -11,13 +11,19 @@ const schema = new Schema(
     password: {
       type: String,
       require: true
-    }
+    },
+    uploads: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "upload"
+      }
+    ]
   },
   {
     timestemps: true
   }
 );
 
-schema.set("toJSON", { virtuals: true });
+schema.set("toJSON", {virtuals: true});
 
 module.exports = mongoose.model("user", schema);

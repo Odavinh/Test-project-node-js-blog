@@ -4,40 +4,41 @@
   <div class="container">
     <div class="content">
       <% user.posts.forEach(post => {%>
-        <div class="post">
-            <div class="top">
-              <a href="/onePost/<%= post.url %>" class="title-post"><h2><%= post.title %>
-                <% if(post.owner.login === user.login){%>
-                  <a href="/post/edit/<%= post.id %>" class="link">🖉</a>
-                <% } %>
-              </h2></a>
-            </div>
-            <div class="body">
-              <p>
-                <%= post.body %>
-              </p>
-            </div>
-            <div class="bottom">
-              <div class="author">
-                Автор:
-                <a href="/user/<%= post.owner.login %>" class="title-post"><%= post.owner.login %></a>
-              </div>
-              <a class="link" href="/onePost/<%= post.url %> # <%= post.id %>">Комментарі: <%= post.commentCount %> </a>
-            </div>
+      <div class="post">
+        <div class="top">
+          <a href="/onePost/<%= post.url %>" class="title-post"
+            ><h2>
+              <%= post.title %> <% if(post.owner.login === user.login){%>
+              <a href="/post/edit/<%= post.id %>" class="link">🖉</a>
+              <% } %>
+            </h2></a
+          >
+        </div>
+        <div class="body">
+          <p>
+            <%= post.body %>
+          </p>
+        </div>
+        <div class="bottom">
+          <div class="author">
+            Автор:
+            <a href="/user/<%= post.owner.login %>" class="title-post"
+              ><%= post.owner.login %></a
+            >
           </div>
+          <a class="link" href="/onePost/<%= post.url %> # <%= post.id %>"
+            >Комментарі: <%= post.commentCount %>
+          </a>
+        </div>
+      </div>
       <% }) %>
       <div class="pagination">
-
         <% if(user.current > 1 && !user.current == 2) { %>
-          <a href="/archive/<%= +user.current - 1 %>" class="new">← Назад</a>
-        <% } %>
-
-        <% if(user.current == 2) { %>
-          <a href="/" class="new">← На головну</a>
-        <% } %>
-          
-        <% if(user.pages > 0 && user.current < user.pages) { %>
-          <a href="/archive/<%= +user.current + 1 %>" class="old">Далі →</a>
+        <a href="/archive/<%= +user.current - 1 %>" class="new">← Назад</a>
+        <% } %> <% if(user.current == 2) { %>
+        <a href="/" class="new">← На головну</a>
+        <% } %> <% if(user.pages > 0 && user.current < user.pages) { %>
+        <a href="/archive/<%= +user.current + 1 %>" class="old">Далі →</a>
         <% } %>
       </div>
     </div>

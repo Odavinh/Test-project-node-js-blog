@@ -12,11 +12,11 @@ const schema = new Schema(
     body: {
       type: String
     },
-    owner:{
+    owner: {
       type: Schema.Types.ObjectId,
       ref: "user"
     },
-    commentCount:{
+    commentCount: {
       type: Number,
       default: 0
     }
@@ -30,21 +30,20 @@ schema.statics = {
   incCommentCount(postId) {
     return this.findByIdAndUpdate(
       postId,
-      {$inc : {commentCount: 1}},
-      {new : true, useFindAndModify: false }
-    )
+      {$inc: {commentCount: 1}},
+      {new: true, useFindAndModify: false}
+    );
   }
 };
 
 schema.plugin(
   URLSlugs("title", {
-    field:'url',
+    field: "url",
+    update: true,
     generator: text => tr.slugify(text)
   })
 );
 
-
-
-schema.set("toJSON", { virtuals: true });
+schema.set("toJSON", {virtuals: true});
 
 module.exports = mongoose.model("post", schema);

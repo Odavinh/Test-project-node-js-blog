@@ -402,7 +402,7 @@ body {
   flex-direction: column;
   height: 49px;
   border-top: 1px solid #e8e8e8;
-  background-color:#e8e8e8;
+  background-color: #e8e8e8;
 }
 .footer .container {
   height: 100%;
@@ -512,18 +512,16 @@ p.ok {
   border: solid 1px green;
 }
 
-.title-post{
+.title-post {
   color: #4b4944;
   text-decoration: none;
 }
 
-.title-post:hover{
+.title-post:hover {
   text-decoration: underline;
 }
 
-
-
-.add-post{
+.add-post {
   margin-bottom: 15px;
   padding: 15px;
   width: 100%;
@@ -532,12 +530,12 @@ p.ok {
   background-color: #fff;
 }
 
-.add-post h2{
+.add-post h2 {
   margin-top: 0;
   margin-bottom: 30px;
 }
 
-.add-post-button{
+.add-post-button {
   color: #f1ce08;
   background-color: #4b4944;
   font-size: 14px;
@@ -559,7 +557,7 @@ p.ok {
   text-decoration: none;
 }
 
-.cancel{
+.cancel {
   float: right;
   color: #4b4944;
   border: #4b4944 solid 1px;
@@ -570,51 +568,50 @@ p.ok {
   border-radius: 20px;
   height: 25px;
   margin-right: 10px;
-  font-size: 12px
+  font-size: 12px;
 }
 
-.cancel:hover{
-  border:wheat solid 1px;
+.cancel:hover {
+  border: wheat solid 1px;
 }
 
-#publish-comment{
+#publish-comment {
   font-size: 12px;
   float: right;
   height: 25px;
 }
 
-#publish-comment:hover{
+#publish-comment:hover {
   border: 1px solid #f1ce08;
 }
 
-#AreaComment{
+#AreaComment {
   margin-bottom: 10px;
 }
 
-form.comment{
+form.comment {
   display: flex;
   flex-direction: column;
   display: none;
   max-width: 500px;
   min-width: 200px;
-
 }
 
-.add-post-button:hover{
+.add-post-button:hover {
   border: 1px solid #f1ce08;
 }
 
-.publish-button{
+.publish-button {
   float: right;
 }
-.edit-button{
+.edit-button {
   float: right;
 }
-.edit-button:hover{
+.edit-button:hover {
   border: 1px solid #f1ce08;
 }
 
-.exit{
+.exit {
   float: right;
   color: #4b4944;
   border: #4b4944 solid 1px;
@@ -625,14 +622,14 @@ form.comment{
   text-decoration: none;
 }
 
-.exit:hover{
-  border: solid wheat 1px
+.exit:hover {
+  border: solid wheat 1px;
 }
 
-.pagination{
+.pagination {
   font-size: 16px;
 }
-.pagination .old{
+.pagination .old {
   float: right;
   color: #4b4944;
   border: #4b4944 solid 1px;
@@ -645,8 +642,7 @@ form.comment{
   margin-left: 0px;
 }
 
-
-.pagination .new{
+.pagination .new {
   float: left;
   color: #4b4944;
   border: #4b4944 solid 1px;
@@ -659,72 +655,77 @@ form.comment{
   margin-left: 0px;
 }
 
-.pagination .old:hover{
-  border: solid wheat 1px
+.pagination .old:hover {
+  border: solid wheat 1px;
 }
 
-.pagination .new:hover{
-  border: solid wheat 1px
+.pagination .new:hover {
+  border: solid wheat 1px;
 }
 
-
-.link{
+.link {
   color: #4b4944;
   text-decoration: none;
   cursor: pointer;
 }
 
-.link:hover{
+.link:hover {
   text-decoration: underline;
 }
 
-.comment-list ul{
+.comment-list ul {
   list-style: none;
   border-left: #f1ce08 solid 1px;
   padding-left: 5px;
   margin-top: 3px;
 }
 
-li{
+li {
   margin-top: 10px;
-  margin-right: 5px
+  margin-right: 5px;
 }
 
-.date{
+.date {
   font-size: 12px;
   margin-left: 5px;
   color: gray;
 }
 
-.commentError{
+.commentError {
   margin-bottom: 3px;
   margin-top: 10px;
-  color:red;
+  color: red;
   font-size: 13px;
 }
 
-.commentOk{
+.commentOk {
   margin-bottom: 3px;
   margin-top: 10px;
   color: green;
   font-size: 13px;
 }
 
-.upload-button{
-  width: 100px;
+#fileinfo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.upload-button:hover{
-  border: 1px solid #f1ce08;
-}
-
-#file{
-  float: right;
-  color: #4b4944;
-  border:#E8E8E8 solid 1px;
-  padding: 3px;
-  padding-left: 10px;
-  padding-right: 10px;
+.custom-file-upload {
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid #4b4944;
   border-radius: 3px;
-  text-decoration: none;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+}
+
+.custom-file-upload input[type="file"] {
+  display: none;
 }
